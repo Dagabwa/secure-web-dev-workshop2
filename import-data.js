@@ -1,16 +1,15 @@
-const {Schema} = require("mongoose");
 require('dotenv').config()
 //console.log(process.env.MONGO_URI)
-import mongoose from 'mongoose';
+const mongoose= require('mongoose')
 const { Schema } = mongoose;
-const monSchema = new Schema({
+const Locations = new Schema({
     filmType:  String,
     filmProducerName: String,
     endDate:   Date,
     district: String,
     geolocation:{
         coordinates:{
-            type: [Number,Number],
+            type: [Number],
             required: true
         },
         type : {

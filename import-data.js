@@ -68,9 +68,8 @@ function addLocation(location) {
     }
 }
 
-function updateLocation(id,parameter,update){
-    //Location.update({_id:id},{filmProducerName :update})
-    Location.updateOne({_id: id}, {$set:{parameter:update}}).then(console.log('done'))
+function updateLocation(id,set){
+    Location.updateOne({_id: id}, {$set:set}).then(console.log('done'))
 }
 
 async function main(){
@@ -82,7 +81,7 @@ async function main(){
     //await addLocation(new Location ({filmName : "David c'est moi"}))
     //await deleteId("634d61eb8db12ad6cd8a38c2")
     //await queryFilmName("David c'est moi")
-    await updateLocation("634d61fa92ffb8fe9e907423",'filmProducerName','David3')
+    await updateLocation("634d61fa92ffb8fe9e907423",{filmProducerName:'David producer'})
     await queryId("634d61fa92ffb8fe9e907423")
     console.log('done')
 }
